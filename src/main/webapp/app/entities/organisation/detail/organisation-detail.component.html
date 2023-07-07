@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="organisation">
+      <h2 data-cy="organisationDetailsHeading"><span>Organisation</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ organisation.id }}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+          <span>{{ organisation.name }}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+          <span>{{ organisation.description }}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+          <span>{{ organisation.email }}</span>
+        </dd>
+        <dt><span>Password</span></dt>
+        <dd>
+          <span>{{ organisation.password }}</span>
+        </dd>
+        <dt><span>Token</span></dt>
+        <dd>
+          <span>{{ organisation.token }}</span>
+        </dd>
+        <dt><span>Subscriptions</span></dt>
+        <dd>
+          <div *ngIf="organisation.subscriptions">
+            <a [routerLink]="['/bundle', organisation.subscriptions?.id, 'view']">{{ organisation.subscriptions?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Userdatas</span></dt>
+        <dd>
+          <div *ngIf="organisation.userdatas">
+            <a [routerLink]="['/user-data', organisation.userdatas?.id, 'view']">{{ organisation.userdatas?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Services</span></dt>
+        <dd>
+          <span *ngFor="let services of organisation.services; let last = last">
+            <a [routerLink]="['/organisation-service', services?.id, 'view']">{{ services.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span>Interfaces</span></dt>
+        <dd>
+          <span *ngFor="let interfaces of organisation.interfaces; let last = last">
+            <a [routerLink]="['/auth-interface', interfaces?.id, 'view']">{{ interfaces.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/organisation', organisation.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

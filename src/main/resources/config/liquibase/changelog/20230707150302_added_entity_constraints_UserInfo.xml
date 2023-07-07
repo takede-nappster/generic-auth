@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity UserInfo.
+    -->
+    <changeSet id="20230707150302-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="roles_id"
+                                 baseTableName="user_info"
+                                 constraintName="fk_user_info__roles_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="role"/>
+
+        <addForeignKeyConstraint baseColumnNames="groupes_id"
+                                 baseTableName="user_info"
+                                 constraintName="fk_user_info__groupes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="groupe"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_info_id"
+                                 baseTableName="rel_user_info__additional_datas"
+                                 constraintName="fk_rel_user_info__additional_datas__user_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="additional_datas_id"
+                                 baseTableName="rel_user_info__additional_datas"
+                                 constraintName="fk_rel_user_info__additional_datas__additional_datas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="additional_data"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_info_id"
+                                 baseTableName="rel_user_info__sessions"
+                                 constraintName="fk_rel_user_info__sessions__user_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="sessions_id"
+                                 baseTableName="rel_user_info__sessions"
+                                 constraintName="fk_rel_user_info__sessions__sessions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="session"/>
+    </changeSet>
+</databaseChangeLog>

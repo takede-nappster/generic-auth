@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150305",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "additional_data",
+  "fields": [
+    {
+      "fieldName": "fieldCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AdditionalData",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "additionalDatas",
+      "ownerSide": false,
+      "relationshipName": "users",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

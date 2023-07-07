@@ -1,0 +1,75 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150302",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_info",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "imagebiometric",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "userType",
+      "fieldType": "UserType",
+      "fieldValues": "ADMIN,USER"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserInfo",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "users",
+      "relationshipName": "roles",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "groupe",
+      "otherEntityRelationshipName": "members",
+      "relationshipName": "groupes",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "additionalData",
+      "otherEntityRelationshipName": "users",
+      "ownerSide": true,
+      "relationshipName": "additionalDatas",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "session",
+      "otherEntityRelationshipName": "sessions",
+      "ownerSide": true,
+      "relationshipName": "sessions",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "organisationService",
+      "otherEntityRelationshipName": "members",
+      "ownerSide": false,
+      "relationshipName": "service",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

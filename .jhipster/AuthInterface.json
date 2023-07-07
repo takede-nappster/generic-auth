@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150312",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "auth_interface",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "driverName",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "AuthInterface",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "interfaceParam",
+      "otherEntityRelationshipName": "authInterface",
+      "relationshipName": "prams",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "organisation",
+      "otherEntityRelationshipName": "interfaces",
+      "ownerSide": false,
+      "relationshipName": "organisation",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

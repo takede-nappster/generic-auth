@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150306",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "session",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Session",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "sessions",
+      "ownerSide": false,
+      "relationshipName": "sessions",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

@@ -1,0 +1,11 @@
+id;field_name;field_code;required_status;type
+1;card;c;false;STRING
+2;drive;relationships Automated Ergonomic;true;NUMBER
+3;Outdoors;clear-thinking;false;OTHER
+4;tolerance;Cross-group;false;DATE
+5;Programmable;Shirt;true;DATE
+6;COM Practical Cotton;B2C Balanced;true;DATE
+7;Cheese Cambridgeshire Buckinghamshire;interfaces B2B;false;STRING
+8;Technicien;wireless Jewelery centrafricaine;false;STRING
+9;overriding Limousin Loan;d'Abbeville;false;DATE
+10;Chair lavender;Libye;true;DATE

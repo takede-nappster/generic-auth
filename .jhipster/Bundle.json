@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150310",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "bundle",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Bundle",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

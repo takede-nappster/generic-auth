@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userData">
+      <h2 data-cy="userDataDetailsHeading"><span>User Data</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ userData.id }}</span>
+        </dd>
+        <dt><span>Field Name</span></dt>
+        <dd>
+          <span>{{ userData.fieldName }}</span>
+        </dd>
+        <dt><span>Field Code</span></dt>
+        <dd>
+          <span>{{ userData.fieldCode }}</span>
+        </dd>
+        <dt><span>Required Status</span></dt>
+        <dd>
+          <span>{{ userData.requiredStatus }}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+          <span>{{ userData.type }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-data', userData.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

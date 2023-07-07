@@ -1,0 +1,24 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150313",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "interface_param",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "InterfaceParam",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

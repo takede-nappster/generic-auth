@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150308",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "groupe",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "descrtion",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Groupe",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "groupes",
+      "relationshipName": "members",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "organisationService",
+      "otherEntityRelationshipName": "groups",
+      "ownerSide": false,
+      "relationshipName": "service",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

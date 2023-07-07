@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity OrganisationService.
+    -->
+    <changeSet id="20230707150307-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="organisation_service_id"
+                                 baseTableName="rel_organisation_service__members"
+                                 constraintName="fk_rel_organisation_service__members__organisation_service_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisation_service"/>
+
+        <addForeignKeyConstraint baseColumnNames="members_id"
+                                 baseTableName="rel_organisation_service__members"
+                                 constraintName="fk_rel_organisation_service__members__members_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="organisation_service_id"
+                                 baseTableName="rel_organisation_service__groups"
+                                 constraintName="fk_rel_organisation_service__groups__organisation_service_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisation_service"/>
+
+        <addForeignKeyConstraint baseColumnNames="groups_id"
+                                 baseTableName="rel_organisation_service__groups"
+                                 constraintName="fk_rel_organisation_service__groups__groups_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="groupe"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <!--
+        Added the constraints for entity Organisation.
+    -->
+    <changeSet id="20230707150309-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="subscriptions_id"
+                                 baseTableName="organisation"
+                                 constraintName="fk_organisation__subscriptions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="bundle"/>
+
+        <addForeignKeyConstraint baseColumnNames="userdatas_id"
+                                 baseTableName="organisation"
+                                 constraintName="fk_organisation__userdatas_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="user_data"/>
+
+        <addForeignKeyConstraint baseColumnNames="organisation_id"
+                                 baseTableName="rel_organisation__services"
+                                 constraintName="fk_rel_organisation__services__organisation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisation"/>
+
+        <addForeignKeyConstraint baseColumnNames="services_id"
+                                 baseTableName="rel_organisation__services"
+                                 constraintName="fk_rel_organisation__services__services_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisation_service"/>
+
+        <addForeignKeyConstraint baseColumnNames="organisation_id"
+                                 baseTableName="rel_organisation__interfaces"
+                                 constraintName="fk_rel_organisation__interfaces__organisation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="organisation"/>
+
+        <addForeignKeyConstraint baseColumnNames="interfaces_id"
+                                 baseTableName="rel_organisation__interfaces"
+                                 constraintName="fk_rel_organisation__interfaces__interfaces_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="auth_interface"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,33 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150311",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_data",
+  "fields": [
+    {
+      "fieldName": "fieldName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fieldCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "requiredStatus",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "DataType",
+      "fieldValues": "STRING,NUMBER,DATE,OTHER"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserData",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

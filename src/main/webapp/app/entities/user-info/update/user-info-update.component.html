@@ -1,0 +1,143 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-user-info-heading" data-cy="UserInfoCreateUpdateHeading">Create or edit a User Info</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_firstName">First Name</label>
+          <input type="text" class="form-control" name="firstName" id="field_firstName" data-cy="firstName" formControlName="firstName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" id="field_lastName" data-cy="lastName" formControlName="lastName" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_username">Username</label>
+          <input type="text" class="form-control" name="username" id="field_username" data-cy="username" formControlName="username" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_imagebiometric">Imagebiometric</label>
+          <input
+            type="text"
+            class="form-control"
+            name="imagebiometric"
+            id="field_imagebiometric"
+            data-cy="imagebiometric"
+            formControlName="imagebiometric"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_dateOfBirth">Date Of Birth</label>
+          <div class="input-group">
+            <input
+              id="field_dateOfBirth"
+              data-cy="dateOfBirth"
+              type="text"
+              class="form-control"
+              name="dateOfBirth"
+              ngbDatepicker
+              #dateOfBirthDp="ngbDatepicker"
+              formControlName="dateOfBirth"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateOfBirthDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_userType">User Type</label>
+          <select class="form-control" name="userType" formControlName="userType" id="field_userType" data-cy="userType">
+            <option [ngValue]="null"></option>
+            <option *ngFor="let userType of userTypeValues" [value]="userType">userType</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_roles">Roles</label>
+          <select class="form-control" id="field_roles" data-cy="roles" name="roles" formControlName="roles">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="roleOption.id === editForm.get('roles')!.value?.id ? editForm.get('roles')!.value : roleOption"
+              *ngFor="let roleOption of rolesSharedCollection; trackBy: trackRoleById"
+            >
+              {{ roleOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_groupes">Groupes</label>
+          <select class="form-control" id="field_groupes" data-cy="groupes" name="groupes" formControlName="groupes">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="groupeOption.id === editForm.get('groupes')!.value?.id ? editForm.get('groupes')!.value : groupeOption"
+              *ngFor="let groupeOption of groupesSharedCollection; trackBy: trackGroupeById"
+            >
+              {{ groupeOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label for="field_additionalDatas">Additional Datas</label>
+          <select
+            class="form-control"
+            id="field_additionalDatas"
+            data-cy="additionalDatas"
+            multiple
+            name="additionalDatas"
+            formControlName="additionalDatas"
+          >
+            <option
+              [ngValue]="getSelectedAdditionalData(additionalDataOption, editForm.get('additionalDatas')!.value)"
+              *ngFor="let additionalDataOption of additionalDataSharedCollection; trackBy: trackAdditionalDataById"
+            >
+              {{ additionalDataOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label for="field_sessions">Sessions</label>
+          <select class="form-control" id="field_sessions" data-cy="sessions" multiple name="sessions" formControlName="sessions">
+            <option
+              [ngValue]="getSelectedSession(sessionOption, editForm.get('sessions')!.value)"
+              *ngFor="let sessionOption of sessionsSharedCollection; trackBy: trackSessionById"
+            >
+              {{ sessionOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

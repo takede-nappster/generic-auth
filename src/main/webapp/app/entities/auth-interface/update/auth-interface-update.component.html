@@ -1,0 +1,79 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-auth-interface-heading" data-cy="AuthInterfaceCreateUpdateHeading">Create or edit a Auth Interface</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_url">Url</label>
+          <input type="text" class="form-control" name="url" id="field_url" data-cy="url" formControlName="url" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_driverName">Driver Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="driverName"
+            id="field_driverName"
+            data-cy="driverName"
+            formControlName="driverName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_prams">Prams</label>
+          <select class="form-control" id="field_prams" data-cy="prams" name="prams" formControlName="prams">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="interfaceParamOption.id === editForm.get('prams')!.value?.id ? editForm.get('prams')!.value : interfaceParamOption"
+              *ngFor="let interfaceParamOption of interfaceParamsSharedCollection; trackBy: trackInterfaceParamById"
+            >
+              {{ interfaceParamOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

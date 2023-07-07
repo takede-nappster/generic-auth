@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="userInfo">
+      <h2 data-cy="userInfoDetailsHeading"><span>User Info</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ userInfo.id }}</span>
+        </dd>
+        <dt><span>First Name</span></dt>
+        <dd>
+          <span>{{ userInfo.firstName }}</span>
+        </dd>
+        <dt><span>Last Name</span></dt>
+        <dd>
+          <span>{{ userInfo.lastName }}</span>
+        </dd>
+        <dt><span>Username</span></dt>
+        <dd>
+          <span>{{ userInfo.username }}</span>
+        </dd>
+        <dt><span>Imagebiometric</span></dt>
+        <dd>
+          <span>{{ userInfo.imagebiometric }}</span>
+        </dd>
+        <dt><span>Date Of Birth</span></dt>
+        <dd>
+          <span>{{ userInfo.dateOfBirth | formatMediumDate }}</span>
+        </dd>
+        <dt><span>User Type</span></dt>
+        <dd>
+          <span>{{ userInfo.userType }}</span>
+        </dd>
+        <dt><span>Roles</span></dt>
+        <dd>
+          <div *ngIf="userInfo.roles">
+            <a [routerLink]="['/role', userInfo.roles?.id, 'view']">{{ userInfo.roles?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Groupes</span></dt>
+        <dd>
+          <div *ngIf="userInfo.groupes">
+            <a [routerLink]="['/groupe', userInfo.groupes?.id, 'view']">{{ userInfo.groupes?.id }}</a>
+          </div>
+        </dd>
+        <dt><span>Additional Datas</span></dt>
+        <dd>
+          <span *ngFor="let additionalDatas of userInfo.additionalDatas; let last = last">
+            <a [routerLink]="['/additional-data', additionalDatas?.id, 'view']">{{ additionalDatas.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span>Sessions</span></dt>
+        <dd>
+          <span *ngFor="let sessions of userInfo.sessions; let last = last">
+            <a [routerLink]="['/session', sessions?.id, 'view']">{{ sessions.id }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/user-info', userInfo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150303",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "role",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Role",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "authorization",
+      "otherEntityRelationshipName": "roles",
+      "relationshipName": "authrizations",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "roles",
+      "relationshipName": "users",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

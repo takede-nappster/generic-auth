@@ -1,0 +1,46 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150307",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "organisation_service",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "OrganisationService",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userInfo",
+      "otherEntityRelationshipName": "service",
+      "ownerSide": true,
+      "relationshipName": "members",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "groupe",
+      "otherEntityRelationshipName": "service",
+      "ownerSide": true,
+      "relationshipName": "groups",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "organisation",
+      "otherEntityRelationshipName": "services",
+      "ownerSide": false,
+      "relationshipName": "organisation",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

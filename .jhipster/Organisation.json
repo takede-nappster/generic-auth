@@ -1,0 +1,63 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150309",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "organisation",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "token",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Organisation",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "bundle",
+      "otherEntityRelationshipName": "organisation",
+      "relationshipName": "subscriptions",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "userData",
+      "otherEntityRelationshipName": "organisation",
+      "relationshipName": "userdatas",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "organisationService",
+      "otherEntityRelationshipName": "organisation",
+      "ownerSide": true,
+      "relationshipName": "services",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "authInterface",
+      "otherEntityRelationshipName": "organisation",
+      "ownerSide": true,
+      "relationshipName": "interfaces",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

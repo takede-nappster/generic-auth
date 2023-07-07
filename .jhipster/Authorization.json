@@ -1,0 +1,35 @@
+{
+  "applications": "*",
+  "changelogDate": "20230707150304",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "authorization",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Authorization",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "role",
+      "otherEntityRelationshipName": "authrizations",
+      "relationshipName": "roles",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}
