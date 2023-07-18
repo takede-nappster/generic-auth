@@ -38,8 +38,8 @@
           <th scope="col" jhiSortBy="email"><span>Email</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="password"><span>Password</span> <fa-icon icon="sort"></fa-icon></th>
           <th scope="col" jhiSortBy="token"><span>Token</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="subscriptions.id"><span>Subscriptions</span> <fa-icon icon="sort"></fa-icon></th>
-          <th scope="col" jhiSortBy="userdatas.id"><span>Userdatas</span> <fa-icon icon="sort"></fa-icon></th>
+          <!--<th scope="col" jhiSortBy="subscriptions.id"><span>Subscriptions</span> <fa-icon icon="sort"></fa-icon></th>-->
+          <!--<th scope="col" jhiSortBy="userdatas.id"><span>Userdatas</span> <fa-icon icon="sort"></fa-icon></th>-->
           <th scope="col"></th>
         </tr>
       </thead>
@@ -53,16 +53,16 @@
           <td>{{ organisation.email }}</td>
           <td>{{ organisation.password }}</td>
           <td>{{ organisation.token }}</td>
-          <td>
+          <!--<td>
             <div *ngIf="organisation.subscriptions">
               <a [routerLink]="['/bundle', organisation.subscriptions?.id, 'view']">{{ organisation.subscriptions?.id }}</a>
             </div>
-          </td>
-          <td>
+          </td>-->
+          <!--<td>
             <div *ngIf="organisation.userdatas">
               <a [routerLink]="['/user-data', organisation.userdatas?.id, 'view']">{{ organisation.userdatas?.id }}</a>
             </div>
-          </td>
+          </td>-->
           <td class="text-end">
             <div class="btn-group">
               <button

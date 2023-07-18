@@ -73,7 +73,7 @@
               [ngValue]="roleOption.id === editForm.get('roles')!.value?.id ? editForm.get('roles')!.value : roleOption"
               *ngFor="let roleOption of rolesSharedCollection; trackBy: trackRoleById"
             >
-              {{ roleOption.id }}
+              {{ roleOption.name }}
             </option>
           </select>
         </div>
@@ -86,12 +86,12 @@
               [ngValue]="groupeOption.id === editForm.get('groupes')!.value?.id ? editForm.get('groupes')!.value : groupeOption"
               *ngFor="let groupeOption of groupesSharedCollection; trackBy: trackGroupeById"
             >
-              {{ groupeOption.id }}
+              {{ groupeOption.name }}
             </option>
           </select>
         </div>
 
-        <div class="row mb-3">
+        <!--<div class="row mb-3">
           <label for="field_additionalDatas">Additional Datas</label>
           <select
             class="form-control"
@@ -120,7 +120,7 @@
               {{ sessionOption.id }}
             </option>
           </select>
-        </div>
+        </div>-->
       </div>
 
       <div>

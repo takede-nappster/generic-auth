@@ -43,7 +43,7 @@
           <input type="text" class="form-control" name="token" id="field_token" data-cy="token" formControlName="token" />
         </div>
 
-        <div class="row mb-3">
+        <!--<div class="row mb-3">
           <label class="form-label" for="field_subscriptions">Subscriptions</label>
           <select
             class="form-control"
@@ -60,7 +60,7 @@
               {{ bundleOption.id }}
             </option>
           </select>
-        </div>
+        </div>-->
 
         <div class="row mb-3">
           <label class="form-label" for="field_userdatas">Userdatas</label>
@@ -75,7 +75,7 @@
           </select>
         </div>
 
-        <div class="row mb-3">
+        <!--<div class="row mb-3">
           <label for="field_services">Services</label>
           <select class="form-control" id="field_services" data-cy="services" multiple name="services" formControlName="services">
             <option
@@ -85,7 +85,7 @@
               {{ organisationServiceOption.id }}
             </option>
           </select>
-        </div>
+        </div>-->
 
         <div class="row mb-3">
           <label for="field_interfaces">Interfaces</label>
@@ -94,7 +94,7 @@
               [ngValue]="getSelectedAuthInterface(authInterfaceOption, editForm.get('interfaces')!.value)"
               *ngFor="let authInterfaceOption of authInterfacesSharedCollection; trackBy: trackAuthInterfaceById"
             >
-              {{ authInterfaceOption.id }}
+              {{ authInterfaceOption.name }}
             </option>
           </select>
         </div>

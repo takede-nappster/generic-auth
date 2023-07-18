@@ -25,7 +25,7 @@
         <dt><span>Authrizations</span></dt>
         <dd>
           <div *ngIf="role.authrizations">
-            <a [routerLink]="['/authorization', role.authrizations?.id, 'view']">{{ role.authrizations?.id }}</a>
+            <a [routerLink]="['/authorization', role.authrizations?.id, 'view']">{{ role.authrizations?.name }}</a>
           </div>
         </dd>
       </dl>

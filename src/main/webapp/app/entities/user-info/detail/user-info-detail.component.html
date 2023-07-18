@@ -50,7 +50,7 @@
             <a [routerLink]="['/groupe', userInfo.groupes?.id, 'view']">{{ userInfo.groupes?.id }}</a>
           </div>
         </dd>
-        <dt><span>Additional Datas</span></dt>
+        <!--<dt><span>Additional Datas</span></dt>
         <dd>
           <span *ngFor="let additionalDatas of userInfo.additionalDatas; let last = last">
             <a [routerLink]="['/additional-data', additionalDatas?.id, 'view']">{{ additionalDatas.id }}</a
@@ -63,7 +63,7 @@
             <a [routerLink]="['/session', sessions?.id, 'view']">{{ sessions.id }}</a
             >{{ last ? '' : ', ' }}
           </span>
-        </dd>
+        </dd>-->
       </dl>
 
       <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

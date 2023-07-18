@@ -48,7 +48,7 @@
           <td>{{ role.description }}</td>
           <td>
             <div *ngIf="role.authrizations">
-              <a [routerLink]="['/authorization', role.authrizations?.id, 'view']">{{ role.authrizations?.id }}</a>
+              <a [routerLink]="['/authorization', role.authrizations?.id, 'view']">{{ role.authrizations?.name }}</a>
             </div>
           </td>
           <td class="text-end">

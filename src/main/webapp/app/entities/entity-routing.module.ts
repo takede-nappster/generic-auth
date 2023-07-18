@@ -16,17 +16,20 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'authorization',
-        data: { pageTitle: 'Authorizations' },
+        data: {
+          pageTitle: 'Authorizations',
+          authorities: ['ROLE_ADMIN']
+        },
         loadChildren: () => import('./authorization/authorization.module').then(m => m.AuthorizationModule),
       },
       {
         path: 'additional-data',
-        data: { pageTitle: 'AdditionalData' },
+        data: { pageTitle: 'AdditionalData', authorities: ['ROLE_ADMIN'] },
         loadChildren: () => import('./additional-data/additional-data.module').then(m => m.AdditionalDataModule),
       },
       {
         path: 'session',
-        data: { pageTitle: 'Sessions' },
+        data: { pageTitle: 'Sessions', authorities: ['ROLE_ADMIN'] },
         loadChildren: () => import('./session/session.module').then(m => m.SessionModule),
       },
       {
@@ -41,7 +44,7 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'organisation',
-        data: { pageTitle: 'Organisations' },
+        data: { pageTitle: 'Organisations', authorities: ['ROLE_ADMIN'] },
         loadChildren: () => import('./organisation/organisation.module').then(m => m.OrganisationModule),
       },
       {
@@ -56,12 +59,14 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'auth-interface',
-        data: { pageTitle: 'AuthInterfaces' },
+        data: { pageTitle: 'AuthInterfaces',
+        authorities: ['ROLE_ADMIN'] },
         loadChildren: () => import('./auth-interface/auth-interface.module').then(m => m.AuthInterfaceModule),
       },
       {
         path: 'interface-param',
-        data: { pageTitle: 'InterfaceParams' },
+        data: { pageTitle: 'InterfaceParams',
+        authorities: ['ROLE_ADMIN'] },
         loadChildren: () => import('./interface-param/interface-param.module').then(m => m.InterfaceParamModule),
       },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */

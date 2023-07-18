@@ -57,12 +57,12 @@
           <td>{{ userInfo.userType }}</td>
           <td>
             <div *ngIf="userInfo.roles">
-              <a [routerLink]="['/role', userInfo.roles?.id, 'view']">{{ userInfo.roles?.id }}</a>
+              <a [routerLink]="['/role', userInfo.roles?.id, 'view']">{{ userInfo.roles?.name }}</a>
             </div>
           </td>
           <td>
             <div *ngIf="userInfo.groupes">
-              <a [routerLink]="['/groupe', userInfo.groupes?.id, 'view']">{{ userInfo.groupes?.id }}</a>
+              <a [routerLink]="['/groupe', userInfo.groupes?.id, 'view']">{{ userInfo.groupes?.name }}</a>
             </div>
           </td>
           <td class="text-end">
